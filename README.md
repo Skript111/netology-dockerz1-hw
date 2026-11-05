@@ -55,24 +55,25 @@
 
 ## Задание 5.
    Создаю два yaml файла 
-   Compose.yaml
-   
-``` version: "3"
+ **compose.yaml:**
+```yaml
+version: "3"
 services:
   portainer:
     network_mode: host
     image: portainer/portainer-ce:latest
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock```
-   
-   docker-compose.yaml
-
-   ``` version: "3"
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+ **docker-compose.yaml:**
+```yaml
+version: "3"
 services:
   registry:
     image: registry:2
     ports:
-    - "5000:5000"  ```
+    - "5000:5000"
+```
 
    ![Docker](Docker-Z1/yaml-file-two.png)
    ![Docker](Docker-Z1/docker-start-prioritet.png)
