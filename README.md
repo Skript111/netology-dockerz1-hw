@@ -24,9 +24,8 @@
 
 ## Задание 1. 
  Выполнил установку Docker и Docker Compose
- ![InstallDocker](Docker-Z1/InstallDocker2.png)
- Установка и заливка образа 
-  ![Docker](Docker-Z1/InstallDocker2.png)
+  ![InstallDocker](Docker-Z1/InstallDocker2.png)
+  Установка и заливка образа 
   ![Docker](Docker-Z1/obraz.png)
   ![Docker](Docker-Z1/install-n.png)
   ![Docker](Docker-Z1/docker-skript111.png)
@@ -57,32 +56,33 @@
 ## Задание 5.
    Создаю два yaml файла 
    Compose.yaml
-```
-    version: "3"
+   
+``` version: "3"
 services:
   portainer:
     network_mode: host
     image: portainer/portainer-ce:latest
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      ```
+      - /var/run/docker.sock:/var/run/docker.sock```
+   
    docker-compose.yaml
-   ```
-   version: "3"
+
+   ``` version: "3"
 services:
   registry:
     image: registry:2
     ports:
-    - "5000:5000" 
-    ```
+    - "5000:5000"  ```
 
    ![Docker](Docker-Z1/yaml-file-two.png)
    ![Docker](Docker-Z1/docker-start-prioritet.png)
 
    Видим что запустился ток один , потому что современный Docker Compose отдает приоритет этому имени файла (а docker-compose.yaml считается устаревшим) 
    Перепишим yaml - добавим туда 
+  ```
    include:
   - docker-compose.yaml
+  ```
   и запустим по новой.
    ![Docker](Docker-Z1/starttwo.png)
    Создание тега , заливка образа 
